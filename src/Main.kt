@@ -1,14 +1,10 @@
 fun main() {
-    print("Введите строку: ")
-    val input = readln().lowercase()
-    val vowels = setOf('а', 'у', 'о', 'ы', 'и', 'э', 'я', 'ю', 'ё', 'е', 'a', 'e', 'i', 'o', 'u')
+    print("Введите число N: ")
+    val n = readln().toInt()
 
-    var count = 0
-    for (char in input) {
-        if (char in vowels) {
-            count++
-        }
+    var i = n
+    while (i >= 1) {
+        println(i)
+        i--
     }
-
-    println("Количество гласных: $count")
 }
