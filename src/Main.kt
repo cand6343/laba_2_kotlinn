@@ -1,15 +1,21 @@
 import kotlin.random.Random
 
 fun main() {
-    val num1 = Random.nextInt(0, 6)
-    val num2 = Random.nextInt(0, 6)
-    val num3 = Random.nextInt(0, 6)
+    var balance = Random.nextInt(100, 1001)
+    var day = 1
 
-    println("Слот-машина: [$num1] [$num2] [$num3]")
+    println("Начальный баланс: $balance руб.")
 
-    if (num1 == num2 && num2 == num3) {
-        println("Джекпот! 🎰")
-    } else {
-        println("Попробуйте ещё раз")
+    while (balance > 0) {
+        val withdrawal = Random.nextInt(10, 101)
+
+        if (balance >= withdrawal) {
+            balance -= withdrawal
+            println("День $day: Снято $withdrawal руб. Остаток: $balance руб.")
+        } else {
+            println("День $day: Снято $balance руб. Счёт пуст!")
+            balance = 0
+        }
+        day++
     }
 }
