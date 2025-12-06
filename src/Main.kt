@@ -1,13 +1,20 @@
+import kotlin.random.Random
+
 fun main() {
-    print("Введите ваше имя: ")
-    val name = readln()
+    val target = Random.nextInt(1, 51)
+    println("Угадай число от 1 до 50")
 
-    print("Введите ваш возраст: ")
-    val age = readln().toInt()
+    while (true) {
+        print("Ваша догадка: ")
+        val guess = readln().toInt()
 
-    print("Введите ваш любимый цвет: ")
-    val color = readln()
-
-    println("Привет, $name! Тебе $age $, и ты любишь $color.")
+        when {
+            guess < target -> println("Больше!")
+            guess > target -> println("Меньше!")
+            else -> {
+                println("Поздравляем! Вы угадали число $target")
+                break
+            }
+        }
+    }
 }
-
