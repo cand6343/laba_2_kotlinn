@@ -1,21 +1,21 @@
 import kotlin.random.Random
 
 fun main() {
-    var balance = Random.nextInt(100, 1001)
-    var day = 1
+    val days = listOf("Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс")
+    val temps = mutableListOf<Int>()
 
-    println("Начальный баланс: $balance руб.")
+    println("Температура на неделе:")
 
-    while (balance > 0) {
-        val withdrawal = Random.nextInt(10, 101)
+    for (day in days) {
+        val temp = Random.nextInt(-10, 31)
+        temps.add(temp)
+        println("$day: $temp°C")
+    }
 
-        if (balance >= withdrawal) {
-            balance -= withdrawal
-            println("День $day: Снято $withdrawal руб. Остаток: $balance руб.")
-        } else {
-            println("День $day: Снято $balance руб. Счёт пуст!")
-            balance = 0
+    println("\nДни с отрицательной температурой:")
+    for (i in days.indices) {
+        if (temps[i] < 0) {
+            println("${days[i]}: ${temps[i]}°C")
         }
-        day++
     }
 }
