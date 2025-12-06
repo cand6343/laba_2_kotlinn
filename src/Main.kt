@@ -1,10 +1,13 @@
 fun main() {
-    print("Введите число от 1 до 50: ")
-    val number = readln().toInt()
+    print("Введите один символ: ")
+    val ch = readln().first()
 
-    if (number in 10..50) {
-        println("Число $number входит в диапазон от 10 до 50.")
-    } else {
-        println("Число $number не входит в диапазон от 10 до 50.")
+    val type = when (ch) {
+        in '0'..'9' -> "Цифра"
+        in 'a'..'z', in 'A'..'Z' -> "Буква латинского алфавита"
+        ' ' -> "Пробел"
+        else -> "Спецсимвол"
     }
+
+    println("Это $type.")
 }
