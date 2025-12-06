@@ -1,13 +1,10 @@
+import kotlin.random.Random
+
 fun main() {
-    print("Введите число N: ")
-    val n = readln().toInt()
+    println("10 бросков шестигранного кубика:")
 
-    var sum = 0
-    var i = 1
-    while (i <= n) {
-        sum += i
-        i++
+    for (i in 1..10) {
+        val dice = Random.nextInt(1, 7)
+        println("Бросок $i: $dice")
     }
-
-    println("Сумма чисел от 1 до $n = $sum")
 }
