@@ -1,24 +1,30 @@
 import kotlin.random.Random
 
 fun main() {
-    val lower = "abcdefghijklmnopqrstuvwxyz"
-    val upper = lower.uppercase()
-    val digits = "0123456789"
-    val symbols = "!@#$%^&*()_+-="
-    val allChars = lower + upper + digits + symbols
+    print("Введите ваше имя: ")
+    val name = readln()
 
-    val length = Random.nextInt(8, 17)
-    val password = CharArray(length)
+    println("Ответьте на 3 вопроса:")
 
-    password[0] = upper[Random.nextInt(upper.length)]
-    password[1] = lower[Random.nextInt(lower.length)]
-    password[2] = digits[Random.nextInt(digits.length)]
-    password[3] = symbols[Random.nextInt(symbols.length)]
+    print("1. Ваш любимый цвет: ")
+    val color = readln()
 
-    for (i in 4 until length) {
-        password[i] = allChars[Random.nextInt(allChars.length)]
-    }
+    print("2. Ваше любимое животное: ")
+    val animal = readln()
 
-    password.shuffle()
-    println("Сгенерированный пароль: ${String(password)}")
+    print("3. Ваше любимое время года: ")
+    val season = readln()
+
+    val feedback = listOf(
+        "Ты крутой!",
+        "Хорошая работа!",
+        "Отличные ответы!",
+        "Интересный выбор!",
+        "Молодец!"
+    )
+
+    println("\n=== РЕЗУЛЬТАТЫ ===")
+    println("Имя: $name")
+    println("Ответы: $color, $animal, $season")
+    println("Отзыв: ${feedback[Random.nextInt(feedback.size)]}")
 }
