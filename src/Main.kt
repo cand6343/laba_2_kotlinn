@@ -1,8 +1,13 @@
 fun main() {
-    val film = listOf("Интерстеллар", "Начало", "Матрица", "Побег из Шоушенка", "Криминальное чтиво")
+    print("Введите ваше имя: ")
+    val name = readln()
 
-    for (film in film) {
-        println(film)
-        println("Длина названия: ${film.length}")
-    }
+    print("Введите ваш возраст: ")
+    val age = readln().toInt()
+
+    print("Введите ваш любимый цвет: ")
+    val color = readln()
+
+    println("Привет, $name! Тебе $age $, и ты любишь $color.")
 }
+
