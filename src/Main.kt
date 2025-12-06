@@ -1,15 +1,10 @@
-
 fun main() {
-    print("Введите ваш возраст: ")
-    val age = readln().toInt()
+    print("Введите число от 1 до 50: ")
+    val number = readln().toInt()
 
-    val result = if (age < 12) {
-        "Вы ребёнок"
-    } else if (age in 12..17) {
-        "Вы подросток"
+    if (number in 10..50) {
+        println("Число $number входит в диапазон от 10 до 50.")
     } else {
-        "Вы взрослый"
+        println("Число $number не входит в диапазон от 10 до 50.")
     }
-
-    println(result)
 }
