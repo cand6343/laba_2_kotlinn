@@ -1,20 +1,14 @@
-import kotlin.random.Random
-
 fun main() {
-    val target = Random.nextInt(1, 51)
-    println("Угадай число от 1 до 50")
+    print("Введите строку: ")
+    val input = readln().lowercase()
+    val vowels = setOf('а', 'у', 'о', 'ы', 'и', 'э', 'я', 'ю', 'ё', 'е', 'a', 'e', 'i', 'o', 'u')
 
-    while (true) {
-        print("Ваша догадка: ")
-        val guess = readln().toInt()
-
-        when {
-            guess < target -> println("Больше!")
-            guess > target -> println("Меньше!")
-            else -> {
-                println("Поздравляем! Вы угадали число $target")
-                break
-            }
+    var count = 0
+    for (char in input) {
+        if (char in vowels) {
+            count++
         }
     }
+
+    println("Количество гласных: $count")
 }
